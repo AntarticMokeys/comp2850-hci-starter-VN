@@ -18,8 +18,8 @@ See mdbook Week 6 Lab 2 Activity 1 Step 2 for the full template to copy.
 
 **Module**: COMP2850 Human-Computer Interaction
 **Activity**: Low-risk needs-finding (peer interviews)
-**Date**: [YYYY-MM-DD]
-**Researcher**: [Your Name/Student ID]
+**Date**: [2025-11-26]
+**Researcher**: [Victor Norris/201871550]
 
 ---
 
@@ -84,8 +84,8 @@ If you change your mind after the interview:
 
 ## Contact
 
-**Researcher**: [Your Name], [your-email@leeds.ac.uk]
-**Module Lead**: Dr. [Name], [module-email]
+**Researcher**: [Victor Norris], [mktd6529@leeds.ac.uk]
+**Module Lead**: [Mx Amy Brereton], [a.m.brereton@leeds.ac.uk]
 **University Ethics**: Research Ethics, ethics@leeds.ac.uk
 
 ---
