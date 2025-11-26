@@ -114,5 +114,90 @@ I want to use use gestures and voice commands,
 so I can navigate content,
 because I find it hard to read
 
+## Participant A
+**Date**: [2025-11-26 19:29]
+**Context**: [Dyslexic, partial hearing loss]
+**Consent**: Written, initials [A.J]
+**Duration**: [~10 minutes]
 
+### Q1: Last time you used a task manager
+**Response**: "Probably earlier today. I use one on my phone to keep track of uni deadlines and small errands. I don't check it constantly, but I open it a few times a day, usually in the morning and again in the evening."
 
+### Follow up: “Can you tell me more about that?”
+**Response**: I mainly use it to stop myself forgetting things. Because of my dyslexia, long lists or cluttered screens can get overwhelming, so I try to keep it simple. I usually put in short task names, sometimes with a little note if I need more detail
+
+**Observations**:
+- Regularly uses a task manager
+- Can be overwhelming -> Need to be simple
+- Keep track of deadlines and errands
+
+**Themes**:
+`cluttered`,`overwhelmed`,`simplicity`
+
+---
+
+### Q2: What frustrates you?
+**Response**:"There are a few things that really frustrate me. One big one is when there's too much text all in one block-it makes it hard for me to scan quickly because of my dyslexia. I also get annoyed when notifications pop up briefly and disappear before I can read them.
+
+Another thing is audio reminders or instructions with no captions. Due to my hearing loss, I might miss what's said unless it's written somewhere. I prefer visual cues and simple, clear language over anything over complicated or relying only on sound."
+
+**Observations**:
+- Needs text to be spread out -> customisation
+- Needs a variety of output -> tactile & visual etc
+- Needs longer time to read -> Manually dismiss instead
+
+**Themes**:
+`cluttered`,`visual-cues`,`simplicity`
+---
+
+### Q3: Lost track of important task?
+**Response**:"Yes, a few times. Usually it happens when I add something quickly in a rush and don't give it enough detail or if I put it in the wrong category. For example, last semester I almost missed a reading I needed for a lecture because I didn't notice it in my task list until the evening.
+
+It's not that I forget everything-more that if a task isn't immediately obvious or doesn't stand out, it can slip through. That's why I like apps that let me sort by due date or priority and maybe highlight urgent tasks."
+
+**Observations**:
+- Wants to highlight tasks -> Visibility
+- Wants to sort tasks -> Filtering
+- Ability to give early reminders
+
+**Themes**: 
+`prioritisation`,`stand-out`,`urgent-tasks`,`sorting`
+---
+
+### Q4: Work without a mouse?
+**Response**: "Sometimes, yeah. I mostly use the keyboard when I'm on my laptop because it's faster for me than switching back and forth. But I do prefer having a mouse available, especially for dragging things or navigating menus-some apps aren't fully keyboard-friendly, which can be frustrating.
+
+I like apps where I can do almost everything with shortcuts, like adding completing, or moving tasks, because it saves me time and makes things feel more organised."
+
+**Observations**:
+- 
+
+**Themes**: 
+`organisation`,`navigation`,`frustration`
+---
+
+### Q5: Eyes closed / bright sunlight?
+**Response**: ""
+
+**Observations**:
+- 
+
+**Themes**:
+
+---
+
+### Q6: One feature to add?
+**Response**: ""
+
+**Observations**:
+- 
+**Themes**:
+
+---
+
+## Summary (Participant A)
+**Top pain points**:
+1. 
+
+**Job story ideas**:
+- 
