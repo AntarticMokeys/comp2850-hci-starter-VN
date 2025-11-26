@@ -92,9 +92,14 @@ fun Route.taskRoutes() {
                 return@post call.respondText(error, ContentType.Text.Html, HttpStatusCode.BadRequest)
             } else {
                 // No-JS: redirect back (could add error query param)
+<<<<<<< HEAD
                 //call.response.headers.append("Location", "/tasks")            <----- I made a change here for lab 1 week 6
                 //return@post call.respond(HttpStatusCode.SeeOther)
                 return@post call.respondRedirect("/tasks?error=required")
+=======
+                call.response.headers.append("Location", "/tasks")
+                return@post call.respond(HttpStatusCode.SeeOther)
+>>>>>>> e64fec607db8861122ccde39dfd0a03b606043ea
             }
         }
 
@@ -118,9 +123,14 @@ fun Route.taskRoutes() {
         }
 
         // No-JS: POST-Redirect-GET pattern (303 See Other)
+<<<<<<< HEAD
         //call.response.headers.append("Location", "/tasks")                <--------- Another change here for lab 1 week 6
         //call.respond(HttpStatusCode.SeeOther)
         call.respondRedirect("/tasks") // No-JS feedback
+=======
+        call.response.headers.append("Location", "/tasks")
+        call.respond(HttpStatusCode.SeeOther)
+>>>>>>> e64fec607db8861122ccde39dfd0a03b606043ea
     }
 
     /**
@@ -139,9 +149,14 @@ fun Route.taskRoutes() {
         }
 
         // No-JS: POST-Redirect-GET pattern (303 See Other)
+<<<<<<< HEAD
         //call.response.headers.append("Location", "/tasks")                <----- Another change here for lab 1 week 6
         //call.respond(HttpStatusCode.SeeOther)
         call.respondRedirect("/tasks")
+=======
+        call.response.headers.append("Location", "/tasks")
+        call.respond(HttpStatusCode.SeeOther)
+>>>>>>> e64fec607db8861122ccde39dfd0a03b606043ea
     }
 
     // TODO: Week 7 Lab 1 Activity 2 Steps 2-5
