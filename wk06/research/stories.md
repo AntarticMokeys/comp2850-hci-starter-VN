@@ -46,7 +46,7 @@
 **Underlying need**: because I find light text or thin fonts hard to read.
 
 **Evidence**: Participant A (notes Line 69-70), Participant B (notes Line 182-185)
-**Inclusion risk**: Screen, visual
+**Inclusion risk**: Monitor, visual
 **Type**: Job story
 **WCAG**: 1.4.6 Contrast (AAA)
 
