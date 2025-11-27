@@ -1,13 +1,12 @@
 id,title,story_ref,story_type,need,type,severity,inclusion_risk,evidence,notes,candidate_fix
-1,Centralised accessibility hub,stories.md#S1,Job story,,,Medium,,,,
+1,Centralised accessibility hub,stories.md#S1,Job story,Reduce searching time,accessibility,Medium,"(Monitor, visual, screen reader)","P-A(notes Line 81-82), P-B(notes Line 196-200)","",false
 2,UI customisation,stories.md#S2,Job story,,,Medium,,,,
 3,Keyboard navigation,stories.md#S3,Job story,,,High,,,,true
-4,High contrast/bold text,stories.md#S4,Job story,,,Medium,,,,
+4,High contrast/bold text,stories.md#S4,Job story,,accessibility,Medium,,,,true
 5,Multiple stimuli,stories.md#S5,Job story,,,Medium,,,,
-6,
+6,Adjustable timing,
 7,
 8,
-
 
 
 ## Story S1: Centralised accessibility hub
