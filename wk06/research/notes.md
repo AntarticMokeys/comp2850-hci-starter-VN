@@ -202,7 +202,7 @@ It would make it easier for me to get started without having to scroll around or
 **Observations**:
 - Wants uncluttered layouts
 - Would like a 'summary view'
-- Wants customistion
+- Wants customisation
 - Wants to prioritise tasks
 **Themes**:
 `customisation`,`summarisation`,`simplicity`,`priorisisation`
