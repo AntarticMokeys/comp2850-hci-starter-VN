@@ -114,7 +114,7 @@ I want to use use gestures and voice commands,
 so I can navigate content,
 because I find it hard to read
 
-## Participant A
+## Participant B
 **Date**: [2025-11-26 19:29]
 **Context**: [Dyslexic, partial hearing loss]
 **Consent**: Written, initials [A.J]
@@ -170,34 +170,64 @@ It's not that I forget everything-more that if a task isn't immediately obvious 
 I like apps where I can do almost everything with shortcuts, like adding completing, or moving tasks, because it saves me time and makes things feel more organised."
 
 **Observations**:
-- 
+- Prefers to have mouse available
+- Wants keyboard friendly apps
+- Wants apps that can do anything with shortcuts
 
 **Themes**: 
-`organisation`,`navigation`,`frustration`
+`organisation`,`navigation`,`frustration`,`shortcuts`
 ---
 
 ### Q5: Eyes closed / bright sunlight?
-**Response**: ""
+**Response**: "I've never tried using an app with my eyes closed-that wouldn't really work for me since I don't use any screen-reader tools.
+
+But I have used apps in bright sunlight, and sometimes the glare makes it hard for me to see the screen clearly. Even though I don't have visual accessibility needs, I still rely on good contrast and bold text in those situations. If an app uses really light colours or thin fonts, it becomes difficult to read outdoors"
 
 **Observations**:
-- 
+- Glare makes it hard to read
+- Relies on high contrast
+- Relies on bold text 
 
 **Themes**:
-
+`contrast`,`bold-text`,`glare`
 ---
 
 ### Q6: One feature to add?
-**Response**: ""
+**Response**: "If I could add one feature, it would be a really clear 'summary view' for the day-someting that showsthe most important tasks in a simple, uncluttered layout.
+
+Because of my dyslexia, big lists can be overwhelming, so having a space where only the high-priority or due-today items appear, with short text and maybe optional icons, would help me focus.
+
+It would make it easier for me to get started without having to scroll around or read loads of text."
 
 **Observations**:
-- 
+- Wants uncluttered layouts
+- Would like a 'summary view'
+- Wants customistion
+- Wants to prioritise tasks
 **Themes**:
-
+`customisation`,`summarisation`,`simplicity`,`priorisisation`
 ---
 
-## Summary (Participant A)
+## Summary (Participant B)
 **Top pain points**:
-1. 
+1. Cluttered layouts
+2. Struggles to read without high contrast or bold text -> Wants customisation
+3. Wants fully keyboard-friendly apps
+4. Wants a variety of outputs -> Sound, vibration, etc
+
 
 **Job story ideas**:
-- 
+- When I'm using an app,
+I want to still be able to access all the content with just the keyboard,
+so I can still complete tasks,
+because It's faster for me than switching back and forth between the mouse and the keyboard.
+
+- When I'm reading text,
+I want to be able to read it in high contrast or bold text,
+so I don't have to rely on other accessibility tools,
+because I find light text or thin fonts hard to read.
+
+- When I'm addings tasks,
+I want to be able to prioritise tasks,
+so I can keep on track of the most important ones,
+because otherwise I'd forget the event until the date, or possibly miss it.
