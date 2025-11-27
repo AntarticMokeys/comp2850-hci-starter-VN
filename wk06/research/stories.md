@@ -2,7 +2,7 @@
 
 ## Story S1: Centralised accessibility hub
 **Situation**: When I'm navigating UI
-**Motivation**: I want all my accessibility needs in one place such as icons or ,
+**Motivation**: I want all my accessibility needs in one place such as text icons or brightness,
 **Outcome**: so I can continue with my task swiftly,
 **Underlying need**: because I don't want to waste unnecessary time.
 
