@@ -99,12 +99,12 @@ time | task | observation | issue_tag | severity
 4. Struggles to read in small or bright interfaces -> Wants customisation
 
 **Job story ideas**:
-- When I'm navigating apps,
+- When I'm navigating UI,
 I want all my accessibility needs in one place ,
 so I can continue with my task swiftly,
 because I don't want to waste unnecessary time.
 
-- When I'm navigating an app,
+- When I'm reading text,
 I want to be able to customise the UI,
 so I can understand the content,
 so I can still complete my tasks
@@ -217,7 +217,7 @@ It would make it easier for me to get started without having to scroll around or
 
 
 **Job story ideas**:
-- When I'm using an app,
+- When I'm navigating the UI,
 I want to still be able to access all the content with just the keyboard,
 so I can still complete tasks,
 because It's faster for me than switching back and forth between the mouse and the keyboard.
