@@ -5,7 +5,7 @@ id,title,story_ref,story_type,need,type,severity,inclusion_risk,evidence,notes,c
 4,High contrast/bold text,stories.md#S4,Job story,Improve readability,accessibility,Medium,"(Monitor, visual)","P-A(notes Line 69-70), P-B(notes Line 182-185)",Allow the ability to enable high contrast/bold text to help users read content,true
 5,Multiple stimuli,stories.md#S5,Job story,Provide additional ways for users to recieve information,feedback,Medium,"(Hearing, sight, sense-of-touch, motor)","P-A(notes Line 38-41), P-B(notes Line 140-143)",Makes the user less likely to forget about important events,false
 6,Adjustable timing,Internal audit,WCAG check,Give users a chance to react to events,usability,Medium,"(Touch, keyboard, screen reader)","WCAG 2.2.1","Allow the user to manually dismiss events,or make events dismiss after accessibility tool is done",false
-7,,,,,,,"()","P-A(notes Line -), P-B(notes Line -)",,false
+7,Time-outs,Internal audit,WCAG check,Notifies user when time-out will occur,feedback,Medium,"(Screen reader, monitor, Hearing)",WCAG 2.2.6,"Will notify the users with enough time, minutes before time-out occurs",false
 8,Prioritisation,notes.md,Notes,Helps the user keep organised,functionality,Medium,"(Hearing, sight, cognitive)",P-B(notes Line 154-157),Allows the user to separate important tasks,false
 
 ## WCAG list
