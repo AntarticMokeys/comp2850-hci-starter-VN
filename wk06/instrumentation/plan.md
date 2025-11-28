@@ -29,6 +29,23 @@
 **Why**: Measure delete task time; verify live region announcement.
 
 - Task modification
+**Trigger**: POST /tasks/{id}/update (success)
+**Fields**: Same structure as Task Created, but `task_code=T5_modify`
+
+**Why**: Measure task modification time; Ensure update in live region.
+
+- Validation Error
+**Trigger**: POST /tasks (blank title)
+**Fields**: 
+
+**Why**: Count errors as usability metric; high error rate = poor UX.
+
+- Keyboard navigation
+**Trigger**: Tab button
+**Fields**: Same as Task Created, but `outcome=validation_error`, `http_status=400`
+
+**Why**: Count errors as usability metric; high error rate = poor UX.
+
 
 Based on backlog priorities:
 - Task creation (time, validation errors)
@@ -37,10 +54,6 @@ Based on backlog priorities:
 - Keyboard navigation (Tab presses per task)
 
 ## Metrics to Capture
-
-
-
-- Time-on-task
 
 - **Time-on-task**: How long to add/edit/delete?
 - **Error rate**: How often do validation errors occur?
