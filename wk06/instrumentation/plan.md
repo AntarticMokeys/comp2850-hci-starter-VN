@@ -36,7 +36,7 @@
 
 - Validation Error
 **Trigger**: POST /tasks (blank title)
-**Fields**: 
+**Fields**: Same as Task Created, but `outcome=validation_error`, `http_status=400`
 
 **Why**: Count errors as usability metric; high error rate = poor UX.
 
@@ -44,13 +44,13 @@
 **Trigger**: Tab button
 **Fields**: Same as Task Created, but `outcome=validation_error`, `http_status=400`
 
-**Why**: Count errors as usability metric; high error rate = poor UX.
+**Why**: Count tab presses as usability metric; high tab number = poor UX.
 
 
 Based on backlog priorities:
 - Task creation (time, validation errors)
-- Task deletion (confirmation shown?)
-- Filter usage (reset frequency)
+- Task deletion (time, confirmation shown?)
+- Task modification (confirmation shown?)
 - Keyboard navigation (Tab presses per task)
 
 ## Metrics to Capture
@@ -64,6 +64,7 @@ Based on backlog priorities:
 
 1. Add 3 tasks (test confirmation feedback)
 2. Delete task with keyboard only (test accessibility)
-3. Filter then page-reload (test filter persistence)
+3. Modify 3 tasks (test confirmation feedback)
+4. Delete 3 tasks (test confirmation feedback)
 
 Details in Week 9 Lab 1.
