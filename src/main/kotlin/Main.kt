@@ -13,6 +13,8 @@ import routes.configureHealthCheck
 import utils.SessionData
 import java.io.StringWriter
 import io.ktor.util.*
+import io.ktor.util.AttributeKey
+import java.io.StringWriter
 
 /**
  * NOTE FOR NON-INTELLIJ IDEs (VSCode, Eclipse, etc.):
@@ -93,26 +95,14 @@ fun Application.configureLogging() {
  * - Full pages in root or feature subdirectories
  */
 fun Application.configureTemplating() {
-    val pebbleEngine =
-        PebbleEngine
-            .Builder()
-            .loader(
-                io.pebbletemplates.pebble.loader.ClasspathLoader().apply {
-                    prefix = "templates/"
-                },
-            ).autoEscaping(true) // XSS protection via auto-escaping
-            .cacheActive(false) // Disable cache in dev for hot reload
-            .strictVariables(false) // Allow undefined variables (fail gracefully)
-            .build()
+    val engine = PebbleEngine.Builder()
+        .loader(ClasspathLoader().apply { prefix = "templates/" })
+        .build()
 
-    environment.monitor.subscribe(ApplicationStarted) {
-        log.info("✓ Pebble templates loaded from resources/templates/")
-        log.info("✓ Server running on configured port")
-    }
-
-    // Make Pebble available to all routes
-    attributes.put(PebbleEngineKey, pebbleEngine)
+    // Store in attributes so renderTemplate() can access it
+    attributes.put(PebbleEngineKey, engine)
 }
+
 
 /**
  * AttributeKey for storing Pebble engine instance.
@@ -120,14 +110,27 @@ fun Application.configureTemplating() {
 val PebbleEngineKey = AttributeKey<PebbleEngine>("PebbleEngine")
 
 /**
- * Render a Pebble template to HTML string.
- *
- * **Usage**:
- * ```kotlin
- * val html = call.renderTemplate("tasks/index.peb", mapOf("tasks" to taskList))
- * call.respondText(html, ContentType.Text.Html)
- * ```
- *
+ * Render Pebble template to HTML string.
+ * Extension function for cleaner template rendering in routes.
+ */
+suspend fun ApplicationCall.renderTemplate(
+    templateName: String,
+    context: Map<String, Any> = emptyMap()
+): String {
+    val engine = application.attributes[PebbleEngineKey]
+    val writer = StringWriter()
+    val template = engine.getTemplate(templateName)
+
+    // Auto-add session info to all templates
+    val sessionData = sessions.get<SessionData>()
+    val enrichedContext = context + mapOf(
+        "sessionId" to (sessionData?.id ?: "anonymous"),
+        "isHtmx" to isHtmxRequest()
+    )
+
+    template.evaluate(writer, enrichedContext)
+    return writer.toString()
+}
  * **Context enrichment**:
  * - Automatically adds `sessionId` from session
  * - Automatically adds `isHtmx` flag (true if HX-Request header present)
@@ -206,15 +209,9 @@ fun Application.configureSessions() {
  * - Task CRUD: `/tasks`, `/tasks/{id}`, etc.
  */
 fun Application.configureRouting() {
+    val store = TaskStore()  // Create instance
     routing {
-        // Static files (CSS, JS, HTMX library)
-        staticResources("/static", "static")
-
-        // Health check endpoint (for monitoring)
-        configureHealthCheck()
-
-        // Task management routes (main feature)
-        // TODO: Week 6 Lab 1 - Implement taskRoutes()
-        taskRoutes()
+        configureTaskRoutes(store)  // Pass to routes
     }
 }
+

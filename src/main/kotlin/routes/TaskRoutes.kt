@@ -8,6 +8,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.pebbletemplates.pebble.PebbleEngine
 import java.io.StringWriter
+import storage.TaskStore
 
 /**
  * NOTE FOR NON-INTELLIJ IDEs (VSCode, Eclipse, etc.):
@@ -45,35 +46,49 @@ import java.io.StringWriter
  * - Week 8: Add pagination, search
  */
 
-fun Route.taskRoutes() {
-    val pebble =
-        PebbleEngine
-            .Builder()
-            .loader(
-                io.pebbletemplates.pebble.loader.ClasspathLoader().apply {
-                    prefix = "templates/"
-                },
-            ).build()
+fun Routing.configureTaskRoutes(store: TaskStore = TaskStore()) {
+    get("/tasks") {
+        val tasks = store.getAll()  // Instance passed as param
+        // ...
+    }
+}
 
     /**
      * Helper: Check if request is from HTMX
      */
     fun ApplicationCall.isHtmx(): Boolean = request.headers["HX-Request"]?.equals("true", ignoreCase = true) == true
 
+    // Fragment endpoint for HTMX updates
+    get("/tasks/fragment") {
+        val q = call.request.queryParameters["q"]?.trim().orEmpty()
+        val page = call.request.queryParameters["page"]?.toIntOrNull() ?: 1
+        val tasks = store.search(q).map { it.toPebbleContext() }
+        val pageData = Page.paginate(tasks, currentPage = page, pageSize = 10)
+
+        val list = call.renderTemplate("tasks/_list.peb", mapOf("page" to pageData, "q" to q))
+        val pager = call.renderTemplate("tasks/_pager.peb", mapOf("page" to pageData, "q" to q))
+        val status = """<div id="status" hx-swap-oob="true">Updated: showing ${pageData.items.size} of ${pageData.totalItems} tasks</div>"""
+
+        call.respondText(list + pager + status, ContentType.Text.Html)
+    }
+
     /**
      * GET /tasks - List all tasks
      * Returns full page (no HTMX differentiation in Week 6)
      */
+    // Update existing GET /tasks to use pagination
     get("/tasks") {
-        val model =
-            mapOf(
-                "title" to "Tasks",
-                "tasks" to TaskRepository.all(),
-            )
-        val template = pebble.getTemplate("tasks/index.peb")
-        val writer = StringWriter()
-        template.evaluate(writer, model)
-        call.respondText(writer.toString(), ContentType.Text.Html)
+        val q = call.request.queryParameters["q"]?.trim().orEmpty()
+        val page = call.request.queryParameters["page"]?.toIntOrNull() ?: 1
+        val tasks = store.search(q).map { it.toPebbleContext() }
+        val pageData = Page.paginate(tasks, currentPage = page, pageSize = 10)
+
+        val html = call.renderTemplate("tasks/index.peb", mapOf(
+            "page" to pageData,
+            "q" to q,
+            "title" to "Tasks"
+        ))
+        call.respondText(html, ContentType.Text.Html)
     }
 
     /**
@@ -92,14 +107,11 @@ fun Route.taskRoutes() {
                 return@post call.respondText(error, ContentType.Text.Html, HttpStatusCode.BadRequest)
             } else {
                 // No-JS: redirect back (could add error query param)
-<<<<<<< HEAD
                 //call.response.headers.append("Location", "/tasks")            <----- I made a change here for lab 1 week 6
                 //return@post call.respond(HttpStatusCode.SeeOther)
                 return@post call.respondRedirect("/tasks?error=required")
-=======
                 call.response.headers.append("Location", "/tasks")
                 return@post call.respond(HttpStatusCode.SeeOther)
->>>>>>> e64fec607db8861122ccde39dfd0a03b606043ea
             }
         }
 
@@ -123,14 +135,11 @@ fun Route.taskRoutes() {
         }
 
         // No-JS: POST-Redirect-GET pattern (303 See Other)
-<<<<<<< HEAD
         //call.response.headers.append("Location", "/tasks")                <--------- Another change here for lab 1 week 6
         //call.respond(HttpStatusCode.SeeOther)
         call.respondRedirect("/tasks") // No-JS feedback
-=======
         call.response.headers.append("Location", "/tasks")
         call.respond(HttpStatusCode.SeeOther)
->>>>>>> e64fec607db8861122ccde39dfd0a03b606043ea
     }
 
     /**
@@ -149,14 +158,9 @@ fun Route.taskRoutes() {
         }
 
         // No-JS: POST-Redirect-GET pattern (303 See Other)
-<<<<<<< HEAD
         //call.response.headers.append("Location", "/tasks")                <----- Another change here for lab 1 week 6
         //call.respond(HttpStatusCode.SeeOther)
         call.respondRedirect("/tasks")
-=======
-        call.response.headers.append("Location", "/tasks")
-        call.respond(HttpStatusCode.SeeOther)
->>>>>>> e64fec607db8861122ccde39dfd0a03b606043ea
     }
 
     // TODO: Week 7 Lab 1 Activity 2 Steps 2-5
@@ -165,4 +169,10 @@ fun Route.taskRoutes() {
     // - GET /tasks/{id}/edit - Show edit form (dual-mode)
     // - POST /tasks/{id}/edit - Save edits with validation (dual-mode)
     // - GET /tasks/{id}/view - Cancel edit (HTMX only)
+
+    val allTasks = store.search(query).map { it.toPebbleContext() }
+    val pageData = Page.paginate(allTasks, currentPage = page, pageSize = 10)
+    // pageData.items = subset for this page
+    // pageData.currentPage = 1, 2, 3, etc.
+
 }
