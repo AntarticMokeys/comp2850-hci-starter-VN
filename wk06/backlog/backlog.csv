@@ -7,15 +7,3 @@ id,title,story_ref,story_type,need,type,severity,inclusion_risk,evidence,notes,c
 6,Adjustable timing,Internal audit,WCAG check,Give users a chance to react to events,usability,Medium,"(Touch, keyboard, screen reader)","WCAG 2.2.1","Allow the user to manually dismiss events,or make events dismiss after accessibility tool is done",false
 7,Time-outs,Internal audit,WCAG check,Notifies user when time-out will occur,feedback,Medium,"(Screen reader, monitor, Hearing)",WCAG 2.2.6,"Will notify the users with enough time, minutes before time-out occurs",false
 8,Prioritisation,notes.md,Notes,Helps the user keep organised,functionality,Medium,"(Hearing, sight, cognitive)",P-B(notes Line 154-157),Allows the user to separate important tasks,false
-
-## WCAG list
-
-✅ At least 8 backlog items (mix of research + WCAG audit)
-✅ Severity and inclusion risk assigned to each
-✅ 1-2 items marked as candidate fixes
-✅ Evidence column links to notes or WCAG reference
-
-✅ At least 8 backlog items (mix of research + WCAG audit)
-✅ Severity and inclusion risk assigned to each
-✅ 1-2 items marked as candidate fixes
-✅ Evidence column links to notes or WCAG reference
