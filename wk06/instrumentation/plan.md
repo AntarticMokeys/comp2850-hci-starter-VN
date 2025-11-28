@@ -7,10 +7,28 @@
 
 ## Events to Log
 
-- 
-- 
-- 
-- 
+- Task creation
+**Trigger**: POST /tasks (success)
+**Fields**:
+- `ts_iso`: ISO 8601 timestamp (e.g., 2025-01-15T14:23:45Z)
+- `session_id`: Anonymous 6-char hex (e.g., `P1_a3f7`)
+- `request_id`: Unique per request (for tracing)
+- `task_code`: `T3_add` (pilot task identifier)
+- `step`: `submit`
+- `outcome`: `success` | `validation_error`
+- `ms`: Time from request start to response (server-side)
+- `http_status`: 200 (success) | 400 (validation error)
+- `js_mode`: `js-on` | `js-off`
+
+**Why**: Measure task completion time, compare HTMX vs. no-JS.
+
+- Task deletion
+**Trigger**: POST /tasks/{id}/delete (success)
+**Fields**: Same structure as Task Created, but `task_code=T4_delete`
+
+**Why**: Measure delete task time; verify live region announcement.
+
+- Task modification
 
 Based on backlog priorities:
 - Task creation (time, validation errors)
@@ -20,9 +38,9 @@ Based on backlog priorities:
 
 ## Metrics to Capture
 
-- 
-- 
-- 
+
+
+- Time-on-task
 
 - **Time-on-task**: How long to add/edit/delete?
 - **Error rate**: How often do validation errors occur?
